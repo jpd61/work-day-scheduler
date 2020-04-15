@@ -22,6 +22,21 @@ if (storedSchedule !== null) {
 
 $("#currentDay").text(dayFormat);
 
-daySchedule.forEach(function(timeBlock, index) {
-    var timeLabel = timeBlock.time
+daySchedule.forEach(function(hourBlock, index) {
+    var timeLabel = hourBlock.time;
+
+    var hourColor = blockColor(timeLabel);
+
+    var hourFormat =
+    '<div class="time-block" id="' +
+		index +
+		'"><div class="row no-gutters input-group"><div class="col-sm-2 col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">' +
+		timeLabel +
+		'</div><textarea class="form-control ' +
+		hourColor +
+		' description">' +
+		hourBlock.event +
+        '</textarea><div class="col-sm-2 col-lg-1 input-group-append"><button class="saveBtn btn-block" type="submit"><i class="far fa-save"></i></button></div></div></div>';
+    
+    $(".container").append(hourFormat);
 })

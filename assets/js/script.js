@@ -39,4 +39,4 @@ daySchedule.forEach(function(hourBlock, index) {
         '</textarea><div class="col-sm-2 col-lg-1 input-group-append"><button class="saveBtn btn-block" type="submit"><i class="far fa-save"></i></button></div></div></div>';
     
     $(".container").append(hourFormat);
-})
+});

@@ -19,3 +19,5 @@ var storedSchedule = JSON.parse(localStorage.getItem("savedSchedule"));
 if (storedSchedule !== null) {
     daySchedule = storedSchedule;
 };
+
+$("#currentDay").text(today);

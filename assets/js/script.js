@@ -22,6 +22,19 @@ if (storedSchedule !== null) {
 
 $("#currentDay").text(dayFormat);
 
+var blockColor(time) {
+    var isNow = moment(now, "H A");
+    var testBlock = moment(time, "H A");
+
+    if (isNow.isBefore(testBlock) === true) {
+        return "future";
+    } else if (isNow.isAfter(testBlock) === true) {
+        return "past";
+    } else {
+        return "present";
+    }
+};
+
 daySchedule.forEach(function(hourBlock, index) {
     var timeLabel = hourBlock.time;
 

@@ -20,4 +20,8 @@ if (storedSchedule !== null) {
     daySchedule = storedSchedule;
 };
 
-$("#currentDay").text(today);
+$("#currentDay").text(dayFormat);
+
+daySchedule.forEach(function(timeBlock, index) {
+    var timeLabel = timeBlock.time
+})

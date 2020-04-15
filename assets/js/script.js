@@ -22,7 +22,7 @@ if (storedSchedule !== null) {
 
 $("#currentDay").text(dayFormat);
 
-var blockColor(time) {
+var blockColor = function (time) {
     var isNow = moment(now, "H A");
     var testBlock = moment(time, "H A");
 

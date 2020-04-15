@@ -14,5 +14,8 @@ var daySchedule = [
 	{ time: "5 PM", event: "" }
 ];
 
-var checkStorage = JSON.parse(localStorage.getItem("savedSchedule"));
+var storedSchedule = JSON.parse(localStorage.getItem("savedSchedule"));
 
+if (storedSchedule !== null) {
+    daySchedule = storedSchedule;
+};

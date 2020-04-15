@@ -1,6 +1,4 @@
-var dayFormat = moment().format("dddd, MMMM Do");
-
-var now = moment().format("H A");
+// script to work the work day scheduler
 
 var daySchedule = [
 	{ time: "9 AM", event: "" },
@@ -16,22 +14,26 @@ var daySchedule = [
 
 var storedSchedule = JSON.parse(localStorage.getItem("savedSchedule"));
 
-if (storedSchedule !== null) {
-    daySchedule = storedSchedule;
-}
-
+// function for updating the blockColor based on current time of day
 var blockColor = function (time) {
-    var isNow = moment(now, "H A");
+    //current time
+    var testTime = moment(moment().format("H A"), "H A");
+    // block of time being tested and value returned
     var testBlock = moment(time, "H A");
 
-    if (isNow.isBefore(testBlock) === true) {
+    // change color style of block depending on if statement results
+    if (testTime.isBefore(testBlock) === true) {
         return "future";
-    } else if (isNow.isAfter(testBlock) === true) {
+    } else if (testTime.isAfter(testBlock) === true) {
         return "past";
     } else {
         return "present";
     }
 };
+
+if (storedSchedule !== null) {
+    daySchedule = storedSchedule;
+}
 
 daySchedule.forEach(function(hourBlock, index) {
     var timeLabel = hourBlock.time;
@@ -63,4 +65,4 @@ $(".saveBtn").on("click", function(event) {
     localStorage.setItem("savedSchedule", JSON.stringify(daySchedule));
 });
 
-$("#currentDay").text(dayFormat);
+$("#currentDay").text(moment().format("dddd, MMMM Do"));

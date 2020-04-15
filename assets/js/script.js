@@ -53,3 +53,14 @@ daySchedule.forEach(function(hourBlock, index) {
     
     $(".container").append(hourFormat);
 });
+
+$(".saveBtn").on("click", function(event) {
+
+    var blockID = parseInt($(this).closest(".time-block").attr("id"));
+
+    var userEntry = $.trim($(this).parent().siblings("textarea").val());
+
+    daySchedule[blockID].event = userEntry;
+
+    localStorage.setItem("savedSchedule", JSON.stringify(daySchedule));
+});

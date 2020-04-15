@@ -1,5 +1,6 @@
 // script to work the work day scheduler
 
+// setting variable for the work day scheduler
 var daySchedule = [
 	{ time: "9 AM", event: "" },
 	{ time: "10 AM", event: "" },
@@ -11,8 +12,6 @@ var daySchedule = [
 	{ time: "4 PM", event: "" },
 	{ time: "5 PM", event: "" }
 ];
-
-var storedSchedule = JSON.parse(localStorage.getItem("savedSchedule"));
 
 // function for updating the blockColor based on current time of day
 var blockColor = function (time) {
@@ -31,8 +30,9 @@ var blockColor = function (time) {
     }
 };
 
-if (storedSchedule !== null) {
-    daySchedule = storedSchedule;
+// if localStorage is not empty retrieve the saved schedule from localStorage
+if (JSON.parse(localStorage.getItem("savedSchedule")) !== null) {
+    daySchedule = JSON.parse(localStorage.getItem("savedSchedule"));
 }
 
 daySchedule.forEach(function(hourBlock, index) {

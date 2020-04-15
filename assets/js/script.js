@@ -18,9 +18,7 @@ var storedSchedule = JSON.parse(localStorage.getItem("savedSchedule"));
 
 if (storedSchedule !== null) {
     daySchedule = storedSchedule;
-};
-
-$("#currentDay").text(dayFormat);
+}
 
 var blockColor = function (time) {
     var isNow = moment(now, "H A");
@@ -64,3 +62,5 @@ $(".saveBtn").on("click", function(event) {
 
     localStorage.setItem("savedSchedule", JSON.stringify(daySchedule));
 });
+
+$("#currentDay").text(dayFormat);

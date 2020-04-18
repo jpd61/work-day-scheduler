@@ -33,7 +33,7 @@ var blockColor = function (time) {
 // if localStorage is not empty retrieve the saved schedule from localStorage
 if (JSON.parse(localStorage.getItem("savedSchedule")) !== null) {
     daySchedule = JSON.parse(localStorage.getItem("savedSchedule"));
-}
+};
 
 // set up the rows for each hour in the schedule
 daySchedule.forEach(function(hourBlock, index) {

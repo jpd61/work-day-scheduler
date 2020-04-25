@@ -1,7 +1,7 @@
 // script to work the work day scheduler
 
 // developer console message
-function consoleMessage() {
+var consoleMessage = () => {
     let consoleMessage = `
     Developed by Joseph DeWoody
     https://jpd61.github.io/work-day-scheduler/
@@ -87,3 +87,5 @@ $(".saveBtn").on("click", function(event) {
 
 // show the current day and time in the header
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
+
+consoleMessage();

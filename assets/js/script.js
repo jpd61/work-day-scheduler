@@ -1,5 +1,14 @@
 // script to work the work day scheduler
 
+// developer console message
+function consoleMessage() {
+    let consoleMessage = `
+    Developed by Joseph DeWoody
+    https://jpd61.github.io/work-day-scheduler/
+    `
+    console.log(consoleMessage);
+}
+
 // setting variable for the work day scheduler
 var daySchedule = [
 	{ time: "9 AM", event: "" },
